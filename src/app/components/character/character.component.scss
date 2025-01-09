@@ -1,0 +1,8 @@
+:host {
+  &:hover {
+    transform: scale3d(1.1, 1.1, 1.1);
+    transition: 0.8s;
+    box-shadow: 2px 2px 2px 2px #201835a6;
+    border-color: none;
+  }
+}

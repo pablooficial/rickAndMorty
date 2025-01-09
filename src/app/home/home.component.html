@@ -1,0 +1,53 @@
+<section class="flex flex-col justify-center h-full">
+  <div>
+    <div class="flex flex-col sm:flex-row justify-between items-center">
+      <h1 class="font-creepster text-5xl text-primary-title shadow my-8">
+        Início
+      </h1>
+      <div class="relative mb-8 sm:mb-0 w-full sm:max-w-sm md:max-w-md">
+        <label
+          for="search"
+          class="absolute left-4 text-gray-400 transition-all pointer-events-none"
+          [ngClass]="{
+            'top-[-8px] text-core-border text-xs bg-core-background px-2':
+              searchValue,
+            'top-2 text-xl': !searchValue
+          }"
+        >
+          Pesquisar
+        </label>
+
+        <input
+          id="search"
+          type="text"
+          style="border-style: solid"
+          autocomplete="off"
+          [(ngModel)]="searchValue"
+          (ngModelChange)="filterCharacters($event, 1)"
+          class="w-full px-4 py-3 text-base bg-core-background text-white border border-gray-600 rounded-lg focus:outline-none focus:border-gray-400 transition pt-2"
+        />
+      </div>
+    </div>
+    <div>
+      <app-character-list [characters]="characters"></app-character-list>
+      @if(characters.length > 0) {
+      <div class="flex justify-between gap-8 py-4">
+        <button
+          class="font-creepster rounded-lg bg-white text-core-foreground px-4 py-2 w-full flex items-center justify-center gap-2"
+          (click)="previousPage(searchValue)"
+        >
+          <span class="material-icons"> arrow_back </span>Voltar
+        </button>
+        <button
+          class="font-creepster rounded-lg bg-white text-core-foreground px-4 py-2 w-full text-center flex items-center justify-center gap-2"
+          (click)="nextPage(searchValue)"
+        >
+          Próximo<span class="material-icons"> arrow_forward </span>
+        </button>
+      </div>
+      } @if(characters.length === 0) {
+      <app-empty-characters origin="home"></app-empty-characters>
+      }
+    </div>
+  </div>
+</section>

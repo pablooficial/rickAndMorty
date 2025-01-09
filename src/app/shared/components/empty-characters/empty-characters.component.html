@@ -1,0 +1,13 @@
+@if(origin === 'home') {
+  <div class="flex flex-col items-center justify-center gap-4 bg-core-foreground py-56">
+    <span class="material-icons text-6xl text-core-border">sentiment_very_dissatisfied</span>
+    <span class="text-2xl font-bold text-core-content">Nada foi encontrado</span>
+    <span class="text-lg text-core-content-low">Tente realizar uma nova busca.</span>
+  </div>
+} @else {
+  <div class="flex flex-col items-center justify-center gap-4 bg-core-foreground py-56 px-12 md:px-24 xl:px-48">
+    <span class="text-2xl font-bold text-core-content">Parece que você ainda não tem favoritos</span>
+    <span class="text-lg text-core-content-low">Volte à página inicial e escolha os melhores para você.</span>
+    <button class="bg-neutral-surface px-4 py-2 rounded-lg text-neutral-content-onSource" routerLink="/">Voltar ao início</button>
+  </div>
+}

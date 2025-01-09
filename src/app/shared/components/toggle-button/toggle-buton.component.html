@@ -1,0 +1,40 @@
+<div class="flex rounded-lg overflow-hidden border border-core-border">
+
+  <button
+    class="flex items-center gap-2 px-4 py-2 transition"
+    [ngClass]="{
+      'bg-black text-white': !isInicio,
+      'bg-white text-black': isInicio
+    }"
+    (click)="toggle('/')"
+    [routerLink]="['/']"
+  >
+    <span class="material-icons" [ngClass]="{ 'text-core-border': !isInicio, 'text-black': isInicio }">
+      home
+    </span>
+    <span class="font-medium hidden sm:block">Início</span>
+  </button>
+
+  <div class="w-px bg-core-border"></div>
+
+  <button
+    class="flex items-center gap-2 px-4 py-2 transition"
+    [ngClass]="{
+      'bg-black text-white': isInicio,
+      'bg-white text-black': !isInicio
+    }"
+    (click)="toggle('/favoritos')"
+    [routerLink]="['/favoritos']"
+  >
+    <span class="material-icons" [ngClass]="{ 'text-core-border': isInicio, 'text-black': !isInicio }">
+      favorite
+    </span>
+    <span class="font-medium hidden sm:block" >Favoritos</span>
+    <span
+      class="ml-2 flex items-center justify-center w-6 h-6 border rounded-full text-sm border-core-foreground text-core-foreground bg-white"
+      style="border-style: solid;"
+    >
+      {{ favoritosCount() }}
+    </span>
+  </button>
+</div>

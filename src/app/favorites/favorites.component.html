@@ -1,0 +1,12 @@
+<section class="container flex flex-col justify-center items h-full">
+  <div class="flex justify-between items-center">
+    <h1 class="font-creepster text-5xl text-primary-title shadow my-8">
+      Favoritos
+    </h1>
+  </div>
+  @if(characters.length === 0) {
+    <app-empty-characters origin="favorites"></app-empty-characters>
+  } @else {
+    <app-character-list [characters]="characters"></app-character-list>
+  }
+</section>

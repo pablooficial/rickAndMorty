@@ -1,0 +1,5 @@
+<div class="w-full max-w-3xl h-full grid sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
+  @for (character of characters; track character.name) {
+  <app-character [character]="character" (removeFavorite)="removeFavoriteFromPage(character)"></app-character>
+  }
+</div>

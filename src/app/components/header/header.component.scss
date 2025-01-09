@@ -1,0 +1,20 @@
+:root {
+  .mat-button-toggle-label-content {
+    background-color: transparent;
+    border-color: white;
+    width: 10rem;
+  }
+  .mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
+  .mat-button-toggle-group-appearance-standard {
+    border-radius: 10px;
+  }
+  .mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+    background-color: white;
+  }
+
+  span.mat-button-toggle-label-content {
+    color: #A4A4A4;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
